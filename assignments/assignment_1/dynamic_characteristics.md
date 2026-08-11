@@ -1,4 +1,4 @@
-## Spice File
+# Spice File
 ``` spice
 * Skywater PDK Simple Inverter Testbench
 * AS = AD = W * (2 * L)
@@ -75,7 +75,8 @@ plot v(vin) v(vout)
 .endc
 .end
 ```
-## Results 
+
+# Results 
 ``` bash
 Circuit: * skywater pdk simple inverter testbench
 
