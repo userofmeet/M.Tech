@@ -6,10 +6,10 @@
 
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 
-
 .param L = 0.15
 .param Wn = 0.42
-.param Wp = 1.365
+.param Wp = 1.3377
+* wp = 3.185 * wn
 
 XM1 vout vin vdd vdd sky130_fd_pr__pfet_01v8
 + l={L}
@@ -82,12 +82,11 @@ plot v(vin) v(vout)
 ``` bash
   Measurements for Transient Analysis
 
-tr                  =  1.77449e-11 targ=  5.60032e-10 trig=  5.42288e-10
-tf                  =  1.96623e-11 targ=  4.47655e-11 trig=  2.51032e-11
-tplh                =  1.90739e-11 targ=  5.49074e-10 trig=  5.30000e-10
-tphl                =  2.38765e-11 targ=  3.38765e-11 trig=  1.00000e-11
-tp                  =  2.14752e-11
-
+tr                  =  1.79229e-11 targ=  5.60298e-10 trig=  5.42375e-10
+tf                  =  1.93631e-11 targ=  4.43245e-11 trig=  2.49615e-11
+tplh                =  1.92320e-11 targ=  5.49232e-10 trig=  5.30000e-10
+tphl                =  2.35957e-11 targ=  3.35957e-11 trig=  1.00000e-11
+tp                  =  2.14139e-11
 ```
 ## Transient output
-<img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/c60f57a1-9e32-4d66-8fa2-9e4b9e66e767" />
+<img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/3e19ecc2-7fef-41df-b81c-4c1a54e1220f" />
