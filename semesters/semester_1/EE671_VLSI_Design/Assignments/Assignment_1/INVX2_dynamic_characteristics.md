@@ -8,7 +8,7 @@
 
 .param L = 0.15
 .param Wn = 0.84
-.param Wp = 2.73
+.param Wp = 2.6754
 
 XM1 vout vin vdd vdd sky130_fd_pr__pfet_01v8
 + l={L}
@@ -20,11 +20,11 @@ XM1 vout vin vdd vdd sky130_fd_pr__pfet_01v8
 
 XM3 n1 vout vdd vdd sky130_fd_pr__pfet_01v8
 + l=0.15
-+ w=1.365
-+ as=0.4095
-+ ad=0.4095
-+ ps=3.33
-+ pd=3.33
++ w=1.3377
++ as=0.40131
++ ad=0.40131
++ ps=3.2754
++ pd=3.2754
 
 XM2 vout vin 0 0 sky130_fd_pr__nfet_01v8
 + l=0.15
@@ -74,19 +74,20 @@ run
 plot v(vin) v(vout)
 .endc
 .end
+
+
 ```
 # Results
 ## Terminal output
 ``` bash
   Measurements for Transient Analysis
 
-tr                  =  1.14564e-11 targ=  5.52058e-10 trig=  5.40601e-10
-tf                  =  1.22272e-11 targ=  3.50162e-11 trig=  2.27891e-11
-tplh                =  1.49270e-11 targ=  5.44927e-10 trig=  5.30000e-10
-tphl                =  1.83488e-11 targ=  2.83488e-11 trig=  1.00000e-11
-tp                  =  1.66379e-11
+tr                  =  1.15351e-11 targ=  5.52167e-10 trig=  5.40632e-10
+tf                  =  1.20447e-11 targ=  3.47242e-11 trig=  2.26795e-11
+tplh                =  1.49832e-11 targ=  5.44983e-10 trig=  5.30000e-10
+tphl                =  1.81556e-11 targ=  2.81556e-11 trig=  1.00000e-11
+tp                  =  1.65694e-11
 ```
 
 ## Transient characteristics 
-<img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/dfcf7c53-5397-47f7-bffe-10e14efd8c44" />
-
+<img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/96843edb-e6a4-4ffe-849f-0b537cfdadb2" />
