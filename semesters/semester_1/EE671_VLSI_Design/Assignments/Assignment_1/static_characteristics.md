@@ -83,4 +83,5 @@ nml = 7.150080e-01
 nmh = 7.146830e-01
 ```
 ## Voltage transfer curve
-<img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/a8a62192-e319-4b0f-9f1b-da1b694e247c" />
+<img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/1ebb8946-366a-4dd4-af59-f81f43e819e7" />
+
