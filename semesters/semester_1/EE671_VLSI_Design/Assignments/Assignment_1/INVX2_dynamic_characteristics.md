@@ -8,7 +8,7 @@
 
 .param L = 0.15
 .param Wn = 0.84
-.param Wp = 2.6754
+.param Wp = 2.6757948
 
 XM1 vout vin vdd vdd sky130_fd_pr__pfet_01v8
 + l={L}
@@ -20,11 +20,11 @@ XM1 vout vin vdd vdd sky130_fd_pr__pfet_01v8
 
 XM3 n1 vout vdd vdd sky130_fd_pr__pfet_01v8
 + l=0.15
-+ w=1.3377
-+ as=0.40131
-+ ad=0.40131
-+ ps=3.2754
-+ pd=3.2754
++ w=1.3378974
++ as=0.40136922
++ ad=0.40136922
++ ps=3.2757948
++ pd=3.2757948
 
 XM2 vout vin 0 0 sky130_fd_pr__nfet_01v8
 + l=0.15
@@ -59,7 +59,7 @@ Vin vin 0 PULSE(0 1.8 0 20p 20p 500p 1n)
 + TARG v(vout) VAL=0.36 FALL=1
 
 * Propagation delays
-.measure tran tplh
+.measure tran tplh 
 + TRIG v(vin) VAL=0.9 FALL=1
 + TARG v(vout) VAL=0.9 RISE=1
 
@@ -82,11 +82,11 @@ plot v(vin) v(vout)
 ``` bash
   Measurements for Transient Analysis
 
-tr                  =  1.15351e-11 targ=  5.52167e-10 trig=  5.40632e-10
-tf                  =  1.20447e-11 targ=  3.47242e-11 trig=  2.26795e-11
-tplh                =  1.49832e-11 targ=  5.44983e-10 trig=  5.30000e-10
-tphl                =  1.81556e-11 targ=  2.81556e-11 trig=  1.00000e-11
-tp                  =  1.65694e-11
+tr                  =  1.15345e-11 targ=  5.52166e-10 trig=  5.40632e-10
+tf                  =  1.20461e-11 targ=  3.47264e-11 trig=  2.26803e-11
+tplh                =  1.49828e-11 targ=  5.44983e-10 trig=  5.30000e-10
+tphl                =  1.81570e-11 targ=  2.81570e-11 trig=  1.00000e-11
+tp                  =  1.65699e-11
 ```
 
 ## Transient characteristics 
