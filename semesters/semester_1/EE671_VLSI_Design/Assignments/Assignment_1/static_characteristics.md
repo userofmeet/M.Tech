@@ -8,9 +8,9 @@
 
 .param L = 0.15
 .param Wn = 0.42
-.param Wp = 1.3377
+.param Wp = 1.3378974
 
-XM1 vout vin vdd vdd sky130_fd_pr__pfet_01v8
+XM1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 
 + l={L}
 + w={Wp}
 + as={Wp*2*L}
@@ -73,14 +73,14 @@ plot v(vin) v(vout)
 # Results
 ## Terminal output
 ```bash
-vm                  =  8.99975e-01
-vil                 =  7.15008e-01
-vih                 =  1.08532e+00
-vm = 8.999750e-01
-vil = 7.150080e-01
-vih = 1.085317e+00
-nml = 7.150080e-01
-nmh = 7.146830e-01
+vm                  =  9.00001e-01
+vil                 =  7.15014e-01
+vih                 =  1.08533e+00
+vm = 9.000008e-01
+vil = 7.150141e-01
+vih = 1.085325e+00
+nml = 7.150141e-01
+nmh = 7.146750e-01
 ```
 ## Voltage transfer curve
 <img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/1ebb8946-366a-4dd4-af59-f81f43e819e7" />
