@@ -8,7 +8,7 @@
 
 .param L = 0.15
 .param Wn = 0.84
-.param Wp = 2.6754
+.param Wp = 2.6757948
 
 XM1 vout vin vdd vdd sky130_fd_pr__pfet_01v8
 + l={L}
@@ -20,11 +20,11 @@ XM1 vout vin vdd vdd sky130_fd_pr__pfet_01v8
 
 XM3 n1 vout vdd vdd sky130_fd_pr__pfet_01v8
 + l=0.15
-+ w=1.3377
-+ as=0.40131
-+ ad=0.40131
-+ ps=3.2754
-+ pd=3.2754
++ w=1.3378974
++ as=0.40136922
++ ad=0.40136922
++ ps=3.2757948
++ pd=3.2757948
 
 XM2 vout vin 0 0 sky130_fd_pr__nfet_01v8
 + l=0.15
@@ -74,14 +74,14 @@ plot v(vin) v(vout)
 # Results
 ## Terminal output
 ``` bash
-vm                  =  8.96224e-01
-vil                 =  7.12925e-01
-vih                 =  1.08597e+00
-vm = 8.962244e-01
-vil = 7.129251e-01
-vih = 1.085974e+00
-nml = 7.129251e-01
-nmh = 7.140260e-01
+vm                  =  8.96235e-01
+vil                 =  7.12928e-01
+vih                 =  1.08598e+00
+vm = 8.962352e-01
+vil = 7.129283e-01
+vih = 1.085978e+00
+nml = 7.129283e-01
+nmh = 7.140220e-01
 ```
 ## Voltage transfer curve 
 <img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/d16dfc6a-c727-4fa2-a7d3-f4b68e7b7000" />
