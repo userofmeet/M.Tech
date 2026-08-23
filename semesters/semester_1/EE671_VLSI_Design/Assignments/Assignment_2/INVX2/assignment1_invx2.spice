@@ -1,0 +1,52 @@
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+.param W_pmos=1.26
+.subckt invx2_layout VOUT VIN VSS VDD
+X0 VOUT VIN VSS VSS sky130_fd_pr__nfet_01v8 ad=0.126 pd=1.02 as=0.126 ps=1.44 w=0.42 l=0.15
+**devattr s=5040,288 d=5040,204
+X1 VOUT VIN VDD VDD sky130_fd_pr__pfet_01v8 ad=0.378 pd=1.86 as=0.378 ps=3.12 w=1.26 l=0.15
+**devattr s=15120,624 d=15120,372
+X2 VSS VIN VOUT VSS sky130_fd_pr__nfet_01v8 ad=0.126 pd=1.44 as=0.126 ps=1.02 w=0.42 l=0.15
+**devattr s=5040,204 d=5040,288
+X3 VDD VIN VOUT VDD sky130_fd_pr__pfet_01v8 ad=0.378 pd=3.12 as=0.378 ps=1.86 w=1.26 l=0.15
+**devattr s=15120,372 d=15120,624
+C0 VDD VIN 0.18594f
+C1 VOUT VIN 0.08794f
+C2 VDD VOUT 0.2387f
+C3 VOUT VSS 0.378f
+C4 VDD VSS 0.81083f
+.ends
+
+.subckt not2 VOUT VDD VSS z_float
+xm01 z_float VOUT VDD VDD sky130_fd_pr__pfet_01v8 l=0.15 w={W_pmos} as={W_pmos*0.3} ad={W_pmos*0.3} ps={2*(W_pmos + 2*0.15)} pd={2*(W_pmos + 2*0.15)}
+xm02 z_float VOUT VSS VSS sky130_fd_pr__nfet_01v8 l=0.15 w=0.42 as=0.1311175 ad=0.131175 ps=1.52 pd=1.52
+.ends
+
+Vdd vdd 0 DC 1.8
+V1 in 0 DC 0 PULSE(0 1.8 0p 20p 20p 1n 2n)
+Xnot1 out in 0 vdd invx2_layout
+Xnot2 out vdd 0 float not2
+
+.control
+dc V1 0 1.8 0.001
+plot V(out) title "Static Transfer Characteristic (Vout)"
+let slope = deriv(V(out))
+meas dc VM WHEN v(in)=v(out)
+meas dc VIL WHEN slope=-1 RISE=1 CROSS=1
+meas dc VIH WHEN slope=-1 FALL=1 CROSS=2
+let NML = VIL - 0.0
+let NMH = 1.8 - VIH
+print VIL VIH NML NMH VM
+tran 1p 12n
+plot V(in) V(out) title "Transient Response (Vin vs Vout)"
+
+meas tran tr_sec TRIG v(out) VAL=0.36 RISE=1 TARG v(out) VAL=1.44 RISE=1
+meas tran tf_sec TRIG v(out) VAL=1.44 FALL=1 TARG v(out) VAL=0.36 FALL=1
+meas tran t_phl TRIG v(in) VAL=0.9 RISE=1 TARG v(out) VAL=0.9 FALL=1
+meas tran t_plh TRIG v(in) VAL=0.9 FALL=1 TARG v(out) VAL=0.9 RISE=1
+let tr = tr_sec * 1e12
+let tf = tf_sec * 1e12
+let tp = ((t_phl + t_plh) / 2) * 1e12
+print tr tf tp
+.endc
+.end

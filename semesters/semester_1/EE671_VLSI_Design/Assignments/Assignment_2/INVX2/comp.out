@@ -1,0 +1,29 @@
+Class invx2_layout:  Merged 2 devices.
+
+Subcircuit summary:
+Circuit 1: invx2_layout                    |Circuit 2: not1                            
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (1)                |sky130_fd_pr__nfet_01v8 (1)                
+sky130_fd_pr__pfet_01v8 (1)                |sky130_fd_pr__pfet_01v8 (1)                
+Number of devices: 2                       |Number of devices: 2                       
+Number of nets: 4                          |Number of nets: 4                          
+---------------------------------------------------------------------------------------
+Circuits match uniquely.
+Property errors were found.
+Netlists match uniquely.
+There were property errors.
+sky130_fd_pr__nfet_01v80 vs. sky130_fd_pr__nfet_01v80:
+ w circuit1: 0.84   circuit2: 0.42   (delta=66.7%, cutoff=1%)
+
+Subcircuit pins:
+Circuit 1: invx2_layout                    |Circuit 2: not1                            
+-------------------------------------------|-------------------------------------------
+(no pins)                                  |VDD **Mismatch**                           
+(no matching pin)                          |VOUT                                       
+(no matching pin)                          |VIN                                        
+(no matching pin)                          |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists for invx2_layout and not1 altered to match.
+Circuits match uniquely.
+Property errors were found.
+The following cells had property errors: invx2_layout

@@ -1,0 +1,20 @@
+timestamp 1787376559
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+node "VOUT" 640 147.223 90 -448 ndif 0 0 0 0 0 0 0 0 10080 408 30240 744 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 42800 1056 0 0 0 0 0 0 0 0 0 0 0 0
+node "VIN" 1797 461.557 -166 -343 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 48516 2752 0 0 4488 268 4488 268 0 0 0 0 0 0 0 0 0 0
+node "VDD" 5053 810.83 -96 -288 nw 0 0 0 0 159408 1632 0 0 30240 1248 30240 1248 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 67108 2136 20900 870 0 0 0 0 0 0 0 0 0 0
+equiv "VDD" "NWELL"
+substrate "VSS" 2096 0 -60 -448 ppd 0 0 0 0 0 0 0 0 10080 576 10080 576 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 30546 1380 19352 774 0 0 0 0 0 0 0 0 0 0
+cap "VDD" "VIN" 185.94
+cap "VIN" "VOUT" 87.9371
+cap "VDD" "VOUT" 238.699
+device msubckt sky130_fd_pr__nfet_01v8 210 -448 211 -447 l=30 w=84 "VSS" "VIN" 60 0 "VOUT" 84 5040,204 "VSS" 84 5040,288
+device msubckt sky130_fd_pr__nfet_01v8 60 -448 61 -447 l=30 w=84 "VSS" "VIN" 60 0 "VSS" 84 5040,288 "VOUT" 84 5040,204
+device msubckt sky130_fd_pr__pfet_01v8 210 -252 211 -251 l=30 w=252 "VDD" "VIN" 60 0 "VOUT" 252 15120,372 "VDD" 252 15120,624
+device msubckt sky130_fd_pr__pfet_01v8 60 -252 61 -251 l=30 w=252 "VDD" "VIN" 60 0 "VDD" 252 15120,624 "VOUT" 252 15120,372
