@@ -1,0 +1,20 @@
+
+Subcircuit summary:
+Circuit 1: invx1_layout                    |Circuit 2: not1                            
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (1)                |sky130_fd_pr__nfet_01v8 (1)                
+sky130_fd_pr__pfet_01v8 (1)                |sky130_fd_pr__pfet_01v8 (1)                
+Number of devices: 2                       |Number of devices: 2                       
+Number of nets: 4                          |Number of nets: 4                          
+---------------------------------------------------------------------------------------
+Circuits match uniquely.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: invx1_layout                    |Circuit 2: not1                            
+-------------------------------------------|-------------------------------------------
+(no pins)                                  |(no pins)                                  
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes invx1_layout and not1 are equivalent.
+Circuits match uniquely.
