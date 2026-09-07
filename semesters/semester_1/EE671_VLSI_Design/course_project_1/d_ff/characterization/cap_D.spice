@@ -1,0 +1,27 @@
+* D Input Capacitance
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include dff_pex.spice
+
+.param VDD=1.8
+
+VVDD VDD 0 {VDD}
+VVSS VSS 0 0
+
+VCLK CLK 0 0
+VD D 0 PULSE(1.8 0 1n 10p 10p 5n 20n)
+
+XDUT D CLK Q VDD VSS d_ff
+
+.tran 0.1p 10n
+.measure tran q_input INTEG i(VD) FROM=1n TO=1.05n
+.measure tran C_input PARAM='abs(q_input)/1.8'
+
+.control
+run
+print q_input
+print C_input
+plot i(VD)
+.endc
+
+.end
