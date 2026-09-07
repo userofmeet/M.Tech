@@ -1,0 +1,27 @@
+* D Flip-Flop Setup time testbench
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+.include dff_pex.spice
+
+.param dslew = 1000p
+.param cslew = 10p
+.param setup = 781p
+
+VVDD VDD 0 1.8
+VVSS VSS 0 0
+
+VCLK CLK 0 PULSE(0 1.8 5n {cslew} {cslew} 5n 10n)
+
+VD D 0 PULSE(0 1.8 {25n - setup} {dslew} {dslew} 100n 200n)
+
+XDUT D CLK Q VDD VSS d_ff
+
+.tran 1p 35n
+
+.control
+run
+plot v(clk) v(d) v(q)
+.endc
+
+.end
